@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Add new movie";
+}
+
+<link rel="stylesheet" href="~/css/forms.css" />
+
+<div class="container vertical-center">
+    <div class="row" id="createContainer">
+        <div class="col-md-6 col-md-offset-3">
+            <form id="createMovie">
+                <fieldset>
+                    <div class="titleText text-center">Add new movie.</div>
+
+                    <div class="form-group">
+                        <label for="CoverURL">CoverURL: </label>
+                        <input class="form-control" type="text" name="CoverURL" placeholder="https://www.image.jpg" required></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Titile">Titile: </label>
+                        <input class="form-control" type="text" name="Titile" id="Titile" placeholder="Titile" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Description: </label>
+                        <textarea class="form-control" type="text" name="Description" cols="40" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success pull-right" type="submit" value="Save">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

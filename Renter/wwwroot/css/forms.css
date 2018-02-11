@@ -1,0 +1,35 @@
+﻿body {
+    padding-top: 90px;
+}
+
+.titleText {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: thin solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+
+legend {
+    color: #678;
+}
+
+.form-control {
+    width: 95%;
+}
+
+label small {
+    color: #678 !important;
+}
+
+span.req {
+    color: maroon;
+    font-size: 112%;
+}
+

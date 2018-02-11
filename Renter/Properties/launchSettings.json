@@ -1,0 +1,39 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "buildOptions": {
+      "emitEntryPoint": true
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:5000/",
+      "launchUrl": "swagger",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "buildOptions": {
+        "emitEntryPoint": true
+      },
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Renter": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "launchUrl": "swagger",
+      "buildOptions": {
+        "emitEntryPoint": true
+      },
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000/"
+    }
+  }
+}

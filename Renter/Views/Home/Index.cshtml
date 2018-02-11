@@ -1,0 +1,29 @@
+﻿@using Renter
+@model List<Models.Models.Movie>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="my-4">Lates Movies</h2>
+    </div>
+
+    @foreach (var movie in Model)
+    {
+        <div class="col-lg-4 col-sm-6 text-center mb-4 movieSelector">
+            <a>
+                <img class="img-fluid d-block mx-auto" src="@movie.CoverURL" alt="">
+                <h3>@movie.Title</h3>
+                <p>
+                    @movie.Description.Truncate(80)
+                    @if (movie.Description.Length > 80)
+                    {
+                        <label>...</label>
+                    }
+                </p>
+            </a>
+        </div>
+    }
+
+</div>
