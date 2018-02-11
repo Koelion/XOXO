@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Models.Dtos.Login;
+using Models.Dtos.User;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -72,7 +73,7 @@ namespace Renter.Controllers
         public async Task<IActionResult> SignOut()
         {
             await HttpContext.SignOutAsync();
-            return View();
+            return RedirectToAction("Index", "Home", null);
         }
     }
 }

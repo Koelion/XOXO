@@ -34,17 +34,28 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                    <li><a href="#"><span class="glyphicon glyphicon-user"> @User.Identity.Name</a></li>
-                    }
-                    else
-                    {
-                    <li><a href="@Url.Action("SignUp", "User")"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    }
-                </ul>
+               @if (User.Identity.IsAuthenticated)
+               {
+                    <ul class="nav navbar-nav navbar-right" id="navLogin">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"> <label>@User.Identity.Name</label></a></li>                  
+                        <li><a href="@Url.Action("SignOut", "User")"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hidden" id="navLogout">
+                        <li><a href="@Url.Action("SignUp", "User")"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+               }
+               else
+               {
+                   <ul class="nav navbar-nav navbar-right hidden" id="navLogin">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"> <label id="navUserName">@User.Identity.Name</label></a></li>                  
+                        <li><a href="@Url.Action("SignOut", "User")"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="navLogout">
+                        <li><a href="@Url.Action("SignUp", "User")"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+               }
             </div>
         </div>
     </nav>
@@ -59,11 +70,10 @@
                            <label>@User.Identity.Name</label>
                             <input type="password" name="Password" placeholder="Password">
                             <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-                        
                     </form>
 
                     <div class="login-help">
-                        <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                        <a href="/User/SignUp">Register</a>
                     </div>
                 </div>
             </div>

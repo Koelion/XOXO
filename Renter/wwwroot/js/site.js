@@ -11,10 +11,14 @@ $('#loginForm').on('submit', function (e) {
         contentType: 'application/json',
         accept: "application/json",
         success: function (result) {
-            alert("success");
+            $('#login-modal').modal('hide');
+            //console.log(result);
+            $('#navLogin').removeClass('hidden');
+            $('#navLogout').addClass('hidden');
+            $('#navUserName').html(result['user']['userName']);
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert("fail");
+            alert("Incorrect username or password");
         }
     });
 });
